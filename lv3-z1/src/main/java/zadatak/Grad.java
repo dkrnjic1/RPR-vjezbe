@@ -1,2 +1,3 @@
-package zadatak;public class Grad {
-}
+package zadatak;
+
+public enum Grad {TRAVNIK, ODZAK, ZENICA, SARAJEVO, LIVNO, TUZLA, MOSTAR, BIHAC, GORAZDE, SIROKI_BRIJEG, BRCKO}
