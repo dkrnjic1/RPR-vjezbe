@@ -41,7 +41,11 @@ public class Program {
                         ulaz.nextLine();
                         System.out.println("Unesite broj bez pozivnog broja:");
                         String brojString = ulaz.nextLine();
-                        broj = new MobilniBroj(mreza, brojString);
+                        try {
+                            broj = new MobilniBroj(mreza, brojString);
+                        } catch(MobilniBroj.PogresnaMobilnaMreza e) {
+                            System.out.println(e);
+                        }
                     } else if (tip == 'I') {
                         System.out.println("Unesite broj: ");
                         String brojString = ulaz.nextLine();

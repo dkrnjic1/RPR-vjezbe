@@ -2,8 +2,10 @@ package zadatak;
 
 import java.util.Objects;
 
-public class FiksniBroj extends TelefonskiBroj{
+public class FiksniBroj extends TelefonskiBroj {
     private Grad grad;
+
+
 
     public Grad getGrad() {
         return grad;
