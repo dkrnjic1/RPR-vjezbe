@@ -30,4 +30,22 @@ class ImenikTest {
         String br = imenik.dajBroj("Hana");
         assertEquals(br, "061/650-453");
     }
+    @Test
+    public void testMockExternal() {
+        Imenik i = Mockito.mock(Imenik.class);
+        Mockito.when(i.dajBroj("Alma")).thenReturn("Nothing");
+
+        String test = i.dajBroj("Alma");
+        assertEquals(test, "Nothing");
+    }
+    @Test
+    public void testMockInternal() {
+        Map<String, TelefonskiBroj> mapa = Mockito.mock(Map.class);
+        Mockito.when(mapa.get("Alma")).thenReturn(new fiksniBroj(Grad.MOSTAR, "650-453"));
+        imenik.setBrojevi(mapa);
+
+        String broj = imenik.dajBroj("Alma");
+        assertNotEquals(broj, "033/650-453");
+        assertEquals(broj, "036/650-453");
+    }
 }
