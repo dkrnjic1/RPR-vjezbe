@@ -4,13 +4,13 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.Objects;
 
-public class LaptopDaoSeializableFile implements LaptopDao {
+public class LaptopDaoSerializableFile implements LaptopDao {
     private  File file;
     private  ArrayList<Laptop> laptopi;
 
-    public LaptopDaoSeializableFile(File file) {
+    public LaptopDaoSerializableFile(File file) {
         this.file = file;
-        laptopi = new ArrayList<Laptop>();
+        laptopi = new ArrayList<>();
     }
 
     @Override
@@ -45,12 +45,13 @@ public class LaptopDaoSeializableFile implements LaptopDao {
     }
 
     @Override
-    public void vratiPodatkeIzDatoteke() {
+    public ArrayList<Laptop> vratiPodatkeIzDatoteke() {
         try (ObjectInputStream inputStream = new ObjectInputStream(new FileInputStream(file))) {
             laptopi = (ArrayList<Laptop>) inputStream.readObject();
         } catch (IOException | ClassNotFoundException e) {
             // Ako datoteka ne postoji ili nije ispravna, nastavite s praznom listom
             laptopi = new ArrayList<>();
         }
+        return laptopi;
     }
 }

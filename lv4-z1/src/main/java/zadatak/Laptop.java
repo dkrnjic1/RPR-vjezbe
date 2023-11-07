@@ -1,6 +1,8 @@
 package zadatak;
 
-public class Laptop {
+import java.io.Serializable;
+
+public class Laptop implements Serializable {
     private String brend;
     private String model;
     private double cijena;
@@ -22,6 +24,7 @@ public class Laptop {
         this.sdd =  sdd;
         velicinaEkrana = velEkrana;
     }
+
 
     public String getBrend() {
         return brend;
@@ -95,4 +98,18 @@ public class Laptop {
         this.velicinaEkrana = velicinaEkrana;
     }
 
+    @Override
+    public String toString() {
+        return "Laptop{" +
+                "brend='" + brend + '\'' +
+                ", model='" + model + '\'' +
+                ", cijena=" + cijena +
+                ", ram=" + ram +
+                ", hdd=" + hdd +
+                ", sdd=" + sdd +
+                ", procesor='" + procesor + '\'' +
+                ", grafickaKartica='" + grafickaKartica + '\'' +
+                ", velicinaEkrana=" + velicinaEkrana +
+                '}';
+    }
 }
