@@ -5,7 +5,9 @@ import java.util.stream.Collectors;
 
 public class Imenik {
     private HashMap<String, TelefonskiBroj> imenik;
-    public void dodaj(String ime, TelefonskiBroj broj) {
+
+
+    public static void dodaj(String ime, TelefonskiBroj broj) {
         imenik.put(ime, broj);
     }
     public String dajBroj(String ime) {
