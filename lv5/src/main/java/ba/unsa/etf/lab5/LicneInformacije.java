@@ -1,2 +1,4 @@
-package ba.unsa.etf.lab5;public class LicneInformacije {
+package ba.unsa.etf.lab5;
+public class LicneInformacije {
+    
 }
